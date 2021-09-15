@@ -10,5 +10,13 @@
   "dependencies": {
     "gsap": "^3.7.1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luciana-roinich/CoderHouse-DesarrolloWeb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/luciana-roinich/CoderHouse-DesarrolloWeb/issues"
+  },
+  "homepage": "https://github.com/luciana-roinich/CoderHouse-DesarrolloWeb#readme",
   "description": ""
 }

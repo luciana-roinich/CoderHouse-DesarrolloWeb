@@ -1,4 +1,6 @@
 /*! jQuery v2.1.3 | (c) 2005, 2014 jQuery Foundation, Inc. | jquery.org/license */ ! function (a, b) {
+  
+
     "object" == typeof module && "object" == typeof module.exports ? module.exports = a.document ? b(a, !0) : function (a) {
         if (!a.document) throw new Error("jQuery requires a window with a document");
         return b(a)
@@ -3077,7 +3079,6 @@
         return a.$ === n && (a.$ = Lc), b && a.jQuery === n && (a.jQuery = Kc), n
     }, typeof b === U && (a.jQuery = a.$ = n), n
 });
-//# sourceMappingURL=jquery.min.map
 $.fn.moveIt = function () {
     var $window = $(window);
     var instances = [];
@@ -3108,4 +3109,54 @@ moveItItem.prototype.update = function (scrollTop) {
 // Initialization
 $(function () {
     $('[data-scroll-speed]').moveIt();
+});
+
+ //# sourceMappingURL=jquery.min.map
+
+//CARRUSEL
+
+$num = $('.my-card').length;
+$even = $num / 2;
+$odder = ($num + 1) / 2;
+
+if ($num % 2 == 0) {
+    $('.my-card:nth-child(' + $even + ')').addClass('activo');
+    $('.my-card:nth-child(' + $even + ')').prev().addClass('prev');
+    $('.my-card:nth-child(' + $even + ')').next().addClass('next');
+} else {
+    $('.my-card:nth-child(' + $odder + ')').addClass('activo');
+    $('.my-card:nth-child(' + $odder + ')').prev().addClass('prev');
+    $('.my-card:nth-child(' + $odder + ')').next().addClass('next');
+}
+
+$('.my-card').click(function () {
+    $slide = $('.activo').width();
+    console.log($('.activo').position().left);
+
+    if ($(this).hasClass('next')) {
+        $('.card-carousel').stop(false, true).animate({
+            left: '-=' + $slide
+        });
+    } else if ($(this).hasClass('prev')) {
+        $('.card-carousel').stop(false, true).animate({
+            left: '+=' + $slide
+        });
+    }
+
+    $(this).removeClass('prev next');
+    $(this).siblings().removeClass('prev activo next');
+
+    $(this).addClass('activo');
+    $(this).prev().addClass('prev');
+    $(this).next().addClass('next');
+});
+
+
+// Keyboard nav
+$('html body .card-carousel').keydown(function (e) {
+    if (e.keyCode == 37) { // left
+        $('.activo').prev().trigger('click');
+    } else if (e.keyCode == 39) { // right
+        $('.activo').next().trigger('click');
+    }
 });

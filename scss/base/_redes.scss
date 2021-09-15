@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&subset=cyrillic,cyrillic-ext,devanagari,greek,greek-ext,latin-ext,vietnamese');
+
+.grid_container {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+
+}
+
+.grid_item {
+
+  justify-items: center;
+  align-items: center;
+  margin-right: 2em;
+
+}
+
+.grid_item:first-child {
+
+  grid-column: 1/2;
+  grid-row: 1/2;
+  align-self: center;
+  justify-self: center;
+
+}
+
+.grid_item:nth-child(2) {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  align-self: center;
+  justify-self: center;
+
+}
+
+
+.grid_item:nth-child(3) {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  align-self: center;
+  justify-self: center;
+
+}
+
+.grid_item:nth-child(4) {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  align-self: center;
+  justify-self: center;
+
+}
+
+.redes {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+}
+
+.redes {
+  display: block;
+  transform: translateY(0%);
+  overflow: hidden
+}
+
+.grid_container {
+  .grid_item {
+    h2 {
+
+      overflow: hidden;
+      font-size: 50px;
+      -webkit-text-stroke: 1px rgba(0, 0, 0, .7);
+      color: #fff;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-position: center center;
+      background-size: cover;
+      -webkit-transition: all 300ms linear;
+      transition: all 300ms linear;
+      background-color: white;
+
+
+    }
+
+    .linkedin:hover {
+
+      animation: change_linkedin_color 2s linear infinite;
+      cursor: pointer;
+      -webkit-text-stroke: 2px rgba(0, 0, 0, 0.3);
+      text-shadow: 4px 8px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .github:hover {
+      animation: change_github_color 2s linear infinite;
+      cursor: pointer;
+      -webkit-text-stroke: 2px rgba(0, 0, 0, 0.3);
+      text-shadow: 4px 8px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .instagram:hover {
+      animation: change_instagram_color 2s linear infinite;
+      cursor: pointer;
+      -webkit-text-stroke: 2px rgba(0, 0, 0, 0.3);
+      text-shadow: 4px 8px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .facebook:hover {
+      animation: change_facebook_color 2s linear infinite;
+      cursor: pointer;
+      -webkit-text-stroke: 2px rgba(0, 0, 0, 0.3);
+      text-shadow: 4px 8px 8px rgba(0, 0, 0, 0.3);
+    }
+
+  }
+}
+
+
+
+
+@keyframes change_linkedin_color {
+
+  0%,
+  100% {
+    background-color: #0e76a8;
+  }
+
+}
+
+@keyframes change_github_color {
+
+  0%,
+  100% {
+    background-color: #171515;
+  }
+
+
+}
+
+
+
+@keyframes change_instagram_color {
+
+  0%,
+  100% {
+    background-color: #c08d64;
+  }
+
+}
+
+
+
+@keyframes change_facebook_color {
+
+  0%,
+  100% {
+    background-color: #3b5998;
+  }
+
+
+}
+
+@media (max-width: 1200px) {
+  h2 {
+    font-size: 100px;
+  }
+}
+
+@media (max-width: 992px) {
+  h2 {
+    font-size: 80px;
+  }
+}
+
+@media (max-width: 580px) {
+  h2 {
+    font-size: 60px;
+  }
+}
