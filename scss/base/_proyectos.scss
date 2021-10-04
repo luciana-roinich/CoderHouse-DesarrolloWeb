@@ -1,5 +1,4 @@
-$highlight:black;
-$darkhighlight: #fde74c;
+@import "../componentes/variables";
 
 .container2 {
     padding: 50px;
@@ -32,13 +31,18 @@ $darkhighlight: #fde74c;
             transition: 0.25s all;
             font-style: bold;
             padding: 20px;
+            font: $fuente_proyectos;
+            line-height: 1.5;
+            font-size: 1em;
+            font-weight: bold;
+            text-align: center;
 
             &:hover {
                 transform: translate(-30px, -30px);
-                border-color: $highlight;
+                border-color: $border_color;
 
-                
-                    .card--display {
+
+                .card--display {
                     display: none;
                     padding: 30px;
                 }
@@ -46,6 +50,7 @@ $darkhighlight: #fde74c;
                 .card--hover {
                     display: block;
                     padding: 0px;
+
 
                 }
             }
@@ -67,8 +72,6 @@ $darkhighlight: #fde74c;
                 padding: 0;
                 text-align: left;
                 margin: 0;
-
-                h2 {}
 
                 p {
                     font-weight: normal;

@@ -1,115 +1,173 @@
+@import "../componentes/variables";
+
+/* CARRUSEL */
 
 .card-carousel {
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    height: 12rem;
+    flex-direction: row;
+    font-family: $fuente_card;
+
+
+
+    .my-card {
+        height: 20rem;
+        width: 25rem;
+        position: relative;
+        z-index: 100;
+        -webkit-transform: scale(0.6) translateY(-2rem);
+        transform: scale(0.6) translateY(-2rem);
+        opacity: 1;
+        cursor: pointer;
+        pointer-events: none;
+        transition: 1s;
+        filter: grayscale(1);
+
+
+        .small {
+            width: 20rem;
+            padding: 24px;
+
+
+            .recipe {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                background-color: white;
+                border: 2px solid #F2F2F2;
+                border-radius: 8px;
+                overflow: hidden;
+
+                &-content {
+                    padding: 16px 32px;
+                }
+
+                &-tags {
+                    margin: 0 -8px;
+                }
+
+                &-tag {
+                    display: inline-block;
+                    margin: 8px;
+                    font-size: .875em;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    letter-spacing: .02em;
+                    color: $titulo_card_carrusel_color;
+                }
+
+                &-title {
+                    margin: 0;
+                    font-size: clamp(1.4em, 2.1vw, 2.1em);
+                    font-family: "Roboto Slab", Helvetica, Arial, sans-serif;
+
+                    a {
+                        text-decoration: none;
+                        color: $texto_descripcion_carrusel_color;
+                    }
+                }
+
+                &-metadata {
+                    margin: 0;
+                }
+
+                &-rating {
+                    font-size: 1.2em;
+                    letter-spacing: 0.05em;
+                    color: $titulo_card_carrusel_color;
+
+                    span {
+                        color: $texto_descripcion_carrusel_color;
+                    }
+                }
+
+
+            }
+
+            .pizza-box {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                height: 18rem;
+                overflow: hidden;
+
+                img {
+                    max-width: 100%;
+                    min-height: 100%;
+                    width: 20rem;
+                    height: 23rem;
+                    object-fit: cover;
+                    /*                     object-position: 50% 50%;
+ */
+                }
+            }
+
+
+        }
+    }
+
+    .activo {
+        z-index: 3;
+        -webkit-transform: scale(1) translateY(0) translateX(0);
+        transform: scale(1) translateY(0) translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+        transition: 1s;
+        filter: none;
+    }
+
+
+    .prev,
+    .next {
+        z-index: 2;
+        -webkit-transform: scale(0.8) translateY(0) translateX(0);
+        transform: scale(0.8) translateY(0) translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+        transition: 1s;
+    }
 }
 
-.card-carousel .my-card {
-    height: 25rem;
-    width: 25rem;
-    position: relative;
-    z-index: 100;
-    -webkit-transform: scale(0.6) translateY(-2rem);
-    transform: scale(0.6) translateY(-2rem);
-    opacity: 1;
-    cursor: pointer;
-    pointer-events: none;
-    background: #2e5266;
-    background: black;
-    transition: 1s;
-}
+@media (min-width: 200px) and (max-width: 900px) {
 
-/*SOMBRA*/
-.card-carousel .my-card:after {
-    content: '';
-    position: absolute;
-    height: 2px;
-    width: 100%;
-    border-radius: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
-    bottom: -5rem;
-    -webkit-filter: blur(4px);
-    filter: blur(4px);
-}
+    .card-carousel {
+        height: 190rem;
+        width: 15rem;
+        display: flex;
+        flex-direction: column;
+        -webkit-transform: none;
+        transform: none;
+        padding-top: 400px;
+        padding-bottom: 400px;
 
-.card-carousel .my-card.activo {
-    z-index: 3;
-    -webkit-transform: scale(1) translateY(0) translateX(0);
-    transform: scale(1) translateY(0) translateX(0);
-    opacity: 1;
-    pointer-events: auto;
-    transition: 1s;
-}
 
-.card-carousel .my-card.prev,
-.card-carousel .my-card.next {
-    z-index: 2;
-    -webkit-transform: scale(0.8) translateY(-1rem) translateX(0);
-    transform: scale(0.8) translateY(-1rem) translateX(0);
-    opacity: 1;
-    pointer-events: auto;
-    transition: 1s;
-}
+        .my-card {
+            height: 30rem;
+            width: 5rem;
+            -webkit-transform: none;
+            transform: none;
+            display: flex;
+            flex-direction: column;
+            filter: none;
+            padding: 12px;
 
-.card-carousel .my-card:nth-child(0):before {
-    content: '0';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    font-size: 3rem;
-    font-weight: 300;
-    color: #fff;
-}
 
-.card-carousel .my-card:nth-child(1):before {
-    content: '1';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    font-size: 3rem;
-    font-weight: 300;
-    color: #fff;
-}
+            .small {
+                .pizza-box {
+                    height: 13rem;
 
-.card-carousel .my-card:nth-child(2):before {
-    content: '2';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    font-size: 3rem;
-    font-weight: 300;
-    color: #fff;
+                    img {
+                        max-width: 100%;
+                        min-height: 100%;
+                        width: 20rem;
+                        height: 8rem;
+                        object-fit: contain;
+                    }
+                }
+            }
+        }
+    }
 }
-
-.card-carousel .my-card:nth-child(3):before {
-    content: '3';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    font-size: 3rem;
-    font-weight: 300;
-    color: #fff;
-}
-
-.card-carousel .my-card:nth-child(4):before {
-    content: '4';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    font-size: 3rem;
-    font-weight: 300;
-    color: #fff;
-}
-

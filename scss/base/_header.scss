@@ -1,0 +1,378 @@
+@import "../componentes/variables";
+
+
+
+*,
+:after,
+:before {
+    box-sizing: $fuente_card;
+}
+
+.o-container {
+
+    font-family: $fuente_card;
+
+
+    .c-header
+
+    /*posicion del nombre*/
+        {
+        position: relative;
+    }
+
+
+    a {
+        /* hover de Web Developer */
+        text-decoration: none;
+        transition: color 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+        color: $color_top_header;
+    }
+
+    p {
+        margin: 0;
+        padding: 0;
+    }
+
+    .o_header1,
+    h2 {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-weight: 200;
+    }
+
+    .o-layout {
+        padding: 0;
+        list-style: none;
+        font-size: 0;
+        margin: 0;
+
+        .o-layout_item {
+            display: inline-block;
+            width: 100%;
+            vertical-align: top;
+            font-size: 1rem;
+            padding-left: 0;
+        }
+    }
+
+
+
+    .o-scroll {
+        box-sizing: border-box;
+        overflow: hidden;
+        width: 100vw;
+    }
+
+    .c-header_title {
+        padding: 2.5rem 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin: 0;
+    }
+
+    .c-header_line {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin: 0;
+        right: 0;
+        transform: scaleX(0);
+        transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+    }
+
+
+    .c-header_line.is-inview {
+        transform: scaleX(1);
+    }
+
+    .c-header_title_line {
+        display: block;
+        opacity: 0;
+        transform-origin: center top;
+        transform-style: preserve-3d;
+        transform: translateY(100%) rotateX(-80deg);
+        transition: opacity 0s cubic-bezier(0.215, 0.61, 0.355, 1),
+            transform 0s cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+}
+
+html.has-scroll-smooth {
+    overflow: hidden;
+}
+
+html.has-scroll-dragging {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.has-scroll-smooth body {
+    overflow: hidden;
+}
+
+
+html.is-ready .c-header_title_line {
+    transform: none;
+    opacity: 1;
+    transition-duration: 0.8s;
+}
+
+
+.c-header_title_line span {
+    display: inline-block;
+}
+
+.c-header_title_line.-version {
+    text-transform: none;
+    font-size: 0;
+}
+
+.c-header_heading {
+    padding: 1.875rem 0;
+}
+
+.c-header_heading_label {
+    display: block;
+    transition: transform 0s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translateY(-60px);
+}
+
+html.is-ready .c-header_heading_label {
+    transform: none;
+    transition-duration: 0.6s;
+}
+
+html.is-ready .o-layout_item:nth-child(2) .c-header_heading_label {
+    transition-delay: 0.1s;
+}
+
+
+
+html:not(.has-scroll-smooth) .c-fixed {
+    top: 0;
+}
+
+
+.u-1\/2 {
+    width: 50% !important;
+}
+
+.u-float-right {
+    float: right !important;
+}
+
+.u-text-right {
+    text-align: right !important;
+}
+
+.u-white {
+    color: black;
+}
+
+.u-label {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+
+/*TITULO CARRUSEL*/
+.o-container1 {
+
+    font-family: $fuente_card;
+
+
+    .c-header
+
+    /*posicion del nombre*/
+        {
+        position: relative;
+    }
+
+
+    a {
+        /* hover de Web Developer */
+        text-decoration: none;
+        transition: color 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+        color: $color_top_header;
+    }
+
+    p {
+        margin: 0;
+        padding: 0;
+    }
+
+    .o_header3,
+    h2 {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-weight: 20;
+        margin: 2rem;
+    }
+
+    .o-layout {
+        padding: 0;
+        list-style: none;
+        font-size: 0;
+        margin: 0;
+
+        .o-layout_item {
+            display: inline-block;
+            width: 100%;
+            vertical-align: top;
+            font-size: 1rem;
+            padding-left: 0;
+        }
+    }
+}
+
+/*MEDIA QUERIES*/
+
+@media (max-width: 699px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 999px) {
+    html {
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1199px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1600px) and (max-width: 1999px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 2000px) and (max-width: 2399px) {
+    html {
+        font-size: 21px;
+    }
+}
+
+@media (min-width: 2400px) {
+    html {
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    a:focus,
+    a:hover {
+        color: #fff;
+    }
+}
+
+@media (max-width: 699px) {
+
+    .o_header1 {
+        font-size: 12vw;
+    }
+    .o_header3 {
+        font-size: 6vw;
+    }
+
+}
+
+@media (min-width: 700px) and (max-width: 1599px) {
+
+    .o_header1 {
+        font-size: 13.5vw;
+    }
+
+    .o_header3 {
+        font-size: 6vw;
+    }
+}
+
+@media (min-width: 1600px) {
+
+    .o_header1 {
+        font-size: 12vw;
+    }
+
+    .o_header3 {
+        font-size: 6vw;
+    }
+}
+
+
+/* margin de la pagina */
+
+@media (max-width: 699px) {
+    .o-container {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}
+
+@media (min-width: 700px) {
+    .o-container {
+        padding-right: 2.5rem;
+        padding-left: 2.5rem;
+    }
+}
+
+/* fin de margin de la pagina */
+
+
+@media (max-width: 699px) {
+    .c-header {
+        height: 50vh;
+        min-height: 340px;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 999px) {
+    .c-header {
+        height: 80vh;
+        min-height: 380px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .c-header {
+        height: 50vh;
+        min-height: 36.875rem;
+    }
+}
+
+@media (min-width: 1600px) {
+    .c-header {
+        height: 100vh;
+        min-height: 46.875rem;
+    }
+}
+
+@media (min-width: 700px) {
+    .u-1\/2\@from-small {
+        width: 50%;
+    }
+}
+
+
+
+
+@media (min-width: 1000px) {
+    .u-1\/2\@from-medium {
+        width: 50%;
+    }
+}
